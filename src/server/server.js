@@ -23,6 +23,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/auth",routes.authRoutes)
+app.use("/bday",routes.bdaysRoutes);
 
 app.use("/", (req, res)=>{
     res.json({ message: "Welcome to Birthday-app api" });

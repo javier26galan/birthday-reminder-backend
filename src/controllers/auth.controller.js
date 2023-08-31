@@ -6,11 +6,7 @@ exports.googleLogin = passport.authenticate("google", {
 });
 
 exports.googleCallback = 
-  passport.authenticate("google", { failureRedirect: "/" }),
-  (req, res) => {
-    // Autenticación exitosa, redirige a la página deseada
-    res.redirect("/"); // Cambia esto a la ruta que quieras
-  }
+  passport.authenticate("google", { failureRedirect: "/" })
 
 exports.logout = (req, res) => {
   req.logout(() => {
