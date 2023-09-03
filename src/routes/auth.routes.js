@@ -5,12 +5,11 @@ const passport = require("passport");
 const router = express.Router();
 
 router.get("/google", authControllers.googleLogin, (req, res) => {
-  console.log("/google", req.user);
   res.json(req.user);
 });
 
 router.get("/google/callback", authControllers.googleCallback, (req, res) => {
-  console.log("callback", req.user);
+  // console.log("callback", req.user);
   res.json(req.user);
 });
 
