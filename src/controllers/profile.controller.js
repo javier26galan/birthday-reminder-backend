@@ -1,5 +1,4 @@
 const Profile = require("../models/profile.model");
-const bcrypt = require("bcrypt");
 
 
 exports.modifyProfile = async (req, res) => {

@@ -21,8 +21,5 @@ app.use("/bdays", routes.bdaysRoutes);
 app.use("/profiles", routes.profilesRoutes);
 app.use("/user", routes.userRoutes)
 
-app.use("/", (req, res) => {
-  res.json({ message: "Welcome to Birthday-app api" });
-});
 
 module.exports = app;
