@@ -1,19 +1,6 @@
 const Profile = require("../models/profile.model");
+const bcrypt = require("bcrypt");
 
-exports.createProfile = async (req, res) => {
-  try {
-    const existingEmail = await Profile.findOne({ email: req.body.email });
-    if (existingEmail) {
-      return res.status(400).json({ error: "Email already exists" });
-    }
-
-    const user = new Profile(req.body);
-    await user.save();
-    res.status(201).json(user);
-  } catch (error) {
-    res.status(500).json({ error: "Error creating the user" });
-  }
-};
 
 exports.modifyProfile = async (req, res) => {
   try {
