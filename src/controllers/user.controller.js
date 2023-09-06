@@ -46,7 +46,7 @@ exports.signup = async (req, res) => {
     }
     const googleUser = parseJwt(req.body.token);
     const { name, email, picture } = googleUser;
-    const existingUser = await Profile.findOne({ email: email });
+    const existingUser = await Profile.findOne({ email: email }).populate("bdaylist");
     if (existingUser) {
       res.status(200).json(existingUser);
     } else {
